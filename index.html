@@ -31,6 +31,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -39,6 +40,12 @@
                   radial-gradient(ellipse at 10% 80%, rgba(139,92,246,0.12) 0%, transparent 50%),
                   var(--bg);
       position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
@@ -67,6 +74,7 @@
     .scroll-hint { position: absolute; bottom: 2rem; animation: bounce 2s infinite; color: var(--text2); font-size: 1.2rem; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
+    /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(13,17,23,0.85); backdrop-filter: blur(12px);
@@ -86,6 +94,7 @@
     .nav-social a { color: var(--text2); font-size: 1rem; transition: color 0.2s; }
     .nav-social a:hover { color: var(--accent2); }
 
+    /* ── SECTIONS ── */
     section { padding: 80px 2rem; max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
@@ -94,10 +103,11 @@
     .section-title { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.5rem; }
     .section-sub { color: var(--text2); font-size: 0.95rem; margin-bottom: 3rem; max-width: 500px; }
 
+    /* ── ABOUT / EDUCATION ── */
     .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
     .edu-card {
       background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.5rem; transition: border-color 0.2s;
+      padding: 1.5rem; position: relative; overflow: hidden; transition: border-color 0.2s;
     }
     .edu-card:hover { border-color: var(--accent); }
     .edu-card .year { font-size: 0.78rem; color: var(--text2); font-weight: 500; margin-bottom: 0.4rem; }
@@ -109,6 +119,7 @@
     }
     .edu-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
 
+    /* ── SKILLS ── */
     .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
     .skill-chip {
       display: inline-flex; align-items: center; gap: 8px;
@@ -119,6 +130,7 @@
     .skill-chip:hover { border-color: var(--accent); color: var(--accent2); }
     .skill-chip i { color: var(--accent2); }
 
+    /* ── YEAR TABS ── */
     .tab-bar {
       display: flex; gap: 4px; margin-bottom: 2.5rem;
       background: var(--bg2); border: 1px solid var(--border);
@@ -145,6 +157,7 @@
     .sem-label.y2 { border-color: var(--year2); }
     .sem-label.y3 { border-color: var(--year3); }
 
+    /* ── COURSE CARDS ── */
     .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
     .course-card {
       background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
@@ -184,6 +197,7 @@
     [data-year-section] { display: none; }
     [data-year-section].visible { display: block; }
 
+    /* ── SECP HIGHLIGHT ── */
     .secp-banner {
       background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(37,99,235,0.15) 100%);
       border: 1px solid rgba(139,92,246,0.4);
@@ -195,11 +209,13 @@
     .secp-banner .info p { color: var(--text2); font-size: 0.85rem; }
     .secp-badge { background: rgba(139,92,246,0.2); color: #c4b5fd; padding: 4px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
 
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    /* ── STATS ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 3rem; }
     .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
     .stat-card .num { font-size: 2.2rem; font-weight: 800; color: var(--accent2); }
     .stat-card .lbl { font-size: 0.82rem; color: var(--text2); margin-top: 0.2rem; }
 
+    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 3rem 2rem; text-align: center; color: var(--text2); font-size: 0.85rem;
@@ -211,15 +227,58 @@
     footer .f-social a { color: var(--text2); transition: color 0.2s; }
     footer .f-social a:hover { color: var(--accent2); }
 
+    /* ── SECP FOLDER CARD ── */
+    .secp-folder {
+      margin-top: 16px;
+      border: 1px solid rgba(139,92,246,0.5);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(139,92,246,0.07) 0%, var(--bg2) 100%);
+      overflow: hidden;
+    }
+    .secp-folder-header {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+      gap: 12px; padding: 1.2rem 1.4rem; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .secp-folder-header:hover { background: rgba(139,92,246,0.08); }
+    .secp-folder-body {
+      display: none;
+      margin-top: 12px;
+      padding: 1.4rem;
+      border: 1px solid rgba(139,92,246,0.4);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(139,92,246,0.07) 0%, var(--bg2) 100%);
+    }
+    .secp-folder-body.open { display: block; }
+    .secp-section-title {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: #c4b5fd; margin: 1.2rem 0 0.6rem; padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(139,92,246,0.25);
+    }
+    .secp-inner-table {
+      width: 100%; border-collapse: collapse; font-size: 0.83rem; margin-bottom: 0.5rem;
+    }
+    .secp-inner-table thead tr th {
+      padding: 7px 10px; color: var(--text2); font-weight: 600; text-align: left;
+    }
+    .secp-inner-table tbody tr { border-top: 1px solid var(--border); }
+    .secp-inner-table tbody tr:hover { background: rgba(139,92,246,0.05); }
+    .secp-inner-table td { padding: 9px 10px; }
+    .secp-inner-table a { color: #c4b5fd; text-decoration: none; font-weight: 600; }
+    .secp-inner-table a:hover { text-decoration: underline; }
+
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .tab-bar { flex-wrap: wrap; }
       .secp-banner { flex-direction: column; }
+      .secp-inner-table thead { display: none; }
+      .secp-inner-table td { display: block; padding: 4px 10px; }
     }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Afif<span>.</span></a>
   <div class="nav-links">
@@ -235,6 +294,7 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <div id="hero">
   <div class="hero-badge"><i class="fas fa-graduation-cap"></i> Computer Science · Data Engineering · UTM</div>
   <h1>Hi, I'm Afif Shaqir Irfan</h1>
@@ -247,10 +307,12 @@
   <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
 </div>
 
+<!-- ABOUT / EDUCATION -->
 <section id="about">
   <div class="section-label">About Me</div>
   <h2 class="section-title">Education Journey</h2>
   <p class="section-sub">From secondary school to pursuing my degree at UTM — here's my academic path.</p>
+
   <div class="edu-grid">
     <div class="edu-card">
       <div class="edu-icon">🏫</div>
@@ -274,6 +336,7 @@
       <span class="result">In Progress</span>
     </div>
   </div>
+
   <div style="margin-top:3rem;">
     <div class="section-label">Highlights</div>
     <h2 class="section-title" style="font-size:1.5rem;">By the Numbers</h2>
@@ -286,6 +349,7 @@
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <div class="section-label">Technical & Tools</div>
   <h2 class="section-title">Skills</h2>
@@ -303,6 +367,7 @@
     <div class="skill-chip"><i class="fab fa-adobe"></i> Photoshop</div>
     <div class="skill-chip"><i class="fab fa-adobe"></i> Premiere Pro</div>
   </div>
+
   <div style="margin-top:3rem;">
     <div class="section-label">Achievements</div>
     <h2 class="section-title" style="font-size:1.5rem;">Leadership & Certificates</h2>
@@ -321,6 +386,7 @@
   </div>
 </section>
 
+<!-- COURSES -->
 <section id="courses">
   <div class="section-label">Academic Record</div>
   <h2 class="section-title">Subjects & Courses</h2>
@@ -332,6 +398,7 @@
     <button class="tab-btn" data-year="3" onclick="showYear(3)">📙 Year 3</button>
   </div>
 
+  <!-- YEAR 1 -->
   <div data-year-section="1" class="visible">
     <div class="sem-label y1">Semester 1 · 2023/2024</div>
     <div class="courses-grid">
@@ -376,6 +443,7 @@
         </div>
       </div>
     </div>
+
     <div class="sem-label y1">Semester 2 · 2023/2024</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -399,6 +467,7 @@
     </div>
   </div>
 
+  <!-- YEAR 2 -->
   <div data-year-section="2">
     <div class="sem-label y2">Semester 1 · 2024/2025</div>
     <div class="courses-grid">
@@ -430,6 +499,7 @@
         </div>
       </div>
     </div>
+
     <div class="sem-label y2">Semester 2 · 2024/2025</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -462,13 +532,16 @@
     </div>
   </div>
 
+  <!-- YEAR 3 -->
   <div data-year-section="3">
     <div class="secp-banner">
       <div class="info">
-        <h3> Semester II 2025/2026</h3>
+        <h3>🌟 Exchange Student · Semester II 2025/2026</h3>
+        <p>Currently enrolled in Special Topics in Data Engineering (SECP3843) as part of the exchange programme.</p>
       </div>
       <span class="secp-badge">Active Semester</span>
     </div>
+
     <div class="sem-label y3">Semester 1 · 2025/2026</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -499,6 +572,7 @@
         </div>
       </div>
     </div>
+
     <div class="sem-label y3">Semester 2 · 2025/2026</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -519,19 +593,63 @@
           <a class="btn-coming"><i class="fas fa-clock"></i> Coming Soon</a>
         </div>
       </div>
-      <div class="course-card" style="border-color:rgba(139,92,246,0.5);background:linear-gradient(135deg,rgba(139,92,246,0.08) 0%,var(--bg2) 100%);">
-        <div class="course-no-img" style="background:linear-gradient(135deg,rgba(139,92,246,0.2) 0%,var(--bg2) 100%);">🌟</div>
+      <!-- SECP3843 — same card size, click to expand details below -->
+      <div class="course-card" style="border-color:rgba(139,92,246,0.5);background:linear-gradient(135deg,rgba(139,92,246,0.08) 0%,var(--bg2) 100%);cursor:pointer;" onclick="toggleSecp()">
+        <div class="course-no-img" style="background:linear-gradient(135deg,rgba(139,92,246,0.18) 0%,var(--bg3) 100%);">🌟</div>
         <div class="course-body">
           <div class="course-sem y3">Year 3 · Sem 2 · Exchange</div>
           <h3>Special Topic in Data Engineering (SECP3843)</h3>
           <p>Azure, Apache Spark, AI tutorials, industry visits, talks, and a full industry project — the capstone of the exchange semester.</p>
-          <a href="https://github.com/afifshaqir/SECP3843-Special-Topic" target="_blank" class="btn-course" style="background:rgba(139,92,246,0.2);border-color:rgba(139,92,246,0.5);color:#c4b5fd;"><i class="fab fa-github"></i> View E-Portfolio</a>
+          <span id="secp-toggle-btn" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:6px;font-size:0.8rem;font-weight:600;background:rgba(139,92,246,0.2);border:1px solid rgba(139,92,246,0.5);color:#c4b5fd;">
+            <i class="fas fa-folder-open"></i> View Details <i class="fas fa-chevron-down" id="secp-icon" style="transition:transform 0.3s;"></i>
+          </span>
         </div>
       </div>
     </div>
+
+    <!-- Expandable details panel — sits below the grid, full width -->
+    <div id="secp-body" class="secp-folder-body">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:0.5rem;">
+        <h3 style="font-size:1rem;font-weight:700;color:#c4b5fd;">🌟 SECP3843 — Special Topics in Data Engineering</h3>
+        <a href="https://github.com/afifshaqir/SECP3843-Special-Topic" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:6px;font-size:0.8rem;font-weight:600;text-decoration:none;background:rgba(139,92,246,0.2);border:1px solid rgba(139,92,246,0.5);color:#c4b5fd;">
+          <i class="fab fa-github"></i> Full E-Portfolio Repo
+        </a>
+      </div>
+
+      <div class="secp-section-title">📌 Assignments</div>
+      <table class="secp-inner-table">
+        <thead><tr><th>No.</th><th>Assignment</th><th>Description</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Academic Writing</strong></td><td>Formal academic writing on a data engineering topic</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/Assignment1" target="_blank">View →</a></td></tr>
+          <tr><td>2</td><td><strong>Tutorial: Microsoft Azure</strong></td><td>Hands-on Azure cloud services tutorial</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/Assignment2" target="_blank">View →</a></td></tr>
+          <tr><td>3</td><td><strong>Tutorial: Apache Spark</strong></td><td>Big data processing with Apache Spark</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/Assignment3" target="_blank">View →</a></td></tr>
+          <tr><td>4</td><td><strong>Tutorial: Artificial Intelligence</strong></td><td>AI application and implementation tutorial</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/Assignment4" target="_blank">View →</a></td></tr>
+        </tbody>
+      </table>
+
+      <div class="secp-section-title">🏭 Industry Engagement</div>
+      <table class="secp-inner-table">
+        <thead><tr><th>Activity</th><th>Description</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td><strong>🏗️ Industry Visit</strong></td><td>Site visit report and reflections</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/IndustryVisit" target="_blank">View →</a></td></tr>
+          <tr><td><strong>🎤 Industry Talk</strong></td><td>Summary and takeaways from industry talk</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/IndustryTalk" target="_blank">View →</a></td></tr>
+        </tbody>
+      </table>
+
+      <div class="secp-section-title">🚀 Projects</div>
+      <table class="secp-inner-table" style="margin-bottom:0;">
+        <thead><tr><th>Project</th><th>Description</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td><strong>🏭 Project Industry (PPG)</strong></td><td>Industry-based group project</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/ProjectIndustry" target="_blank">View →</a></td></tr>
+          <tr><td><strong>👤 Project Individual</strong></td><td>Alternative assessment individual project</td><td><a href="https://github.com/afifshaqir/SECP3843-Special-Topic/tree/main/ProjectIndividual" target="_blank">View →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" style="max-width:600px;">
   <div class="section-label">Get in Touch</div>
   <h2 class="section-title">Contact Me</h2>
@@ -543,6 +661,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="f-social">
     <a href="https://github.com/afifshaqir" target="_blank"><i class="fab fa-github"></i></a>
@@ -567,6 +686,15 @@
     document.querySelector('[data-year-section="' + y + '"]').classList.add('visible');
     document.querySelector('[data-year="' + y + '"]').classList.add('active');
   }
+
+  function toggleSecp() {
+    const body = document.getElementById('secp-body');
+    const icon = document.getElementById('secp-icon');
+    body.classList.toggle('open');
+    icon.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+
+  // Smooth active nav link on scroll
   const sections = document.querySelectorAll('section[id], div[id="hero"]');
   window.addEventListener('scroll', () => {
     let current = '';
