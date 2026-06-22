@@ -1,4 +1,3 @@
-html
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -31,50 +30,7 @@ html
 
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-Writing…
 
-
-
-
-
-Claude is AI and can make mistakes. Please double-check responses. Give us feedback
-
-
-Index · HTML
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Afif Shaqir — E-Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
-    :root {
-      --bg: #0d1117;
-      --bg2: #161b22;
-      --bg3: #21262d;
-      --accent: #2563eb;
-      --accent2: #3b82f6;
-      --accent-glow: rgba(37,99,235,0.3);
-      --text: #e6edf3;
-      --text2: #8b949e;
-      --border: #30363d;
-      --card-hover: #1c2128;
-      --badge-bg: rgba(37,99,235,0.12);
-      --badge-text: #60a5fa;
-      --year1: #10b981;
-      --year2: #f59e0b;
-      --year3: #8b5cf6;
-      --radius: 12px;
-    }
- 
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
- 
-    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -83,12 +39,6 @@ Index · HTML
                   radial-gradient(ellipse at 10% 80%, rgba(139,92,246,0.12) 0%, transparent 50%),
                   var(--bg);
       position: relative; overflow: hidden;
-    }
-    #hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
@@ -116,8 +66,7 @@ Index · HTML
     .btn-secondary:hover { background: var(--bg2); border-color: var(--accent); color: var(--accent2); }
     .scroll-hint { position: absolute; bottom: 2rem; animation: bounce 2s infinite; color: var(--text2); font-size: 1.2rem; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
- 
-    /* ── NAV ── */
+
     nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(13,17,23,0.85); backdrop-filter: blur(12px);
@@ -136,8 +85,7 @@ Index · HTML
     .nav-social { display: flex; gap: 10px; }
     .nav-social a { color: var(--text2); font-size: 1rem; transition: color 0.2s; }
     .nav-social a:hover { color: var(--accent2); }
- 
-    /* ── SECTIONS ── */
+
     section { padding: 80px 2rem; max-width: 1100px; margin: 0 auto; }
     .section-label {
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
@@ -145,12 +93,11 @@ Index · HTML
     }
     .section-title { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.5rem; }
     .section-sub { color: var(--text2); font-size: 0.95rem; margin-bottom: 3rem; max-width: 500px; }
- 
-    /* ── ABOUT / EDUCATION ── */
+
     .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
     .edu-card {
       background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.5rem; position: relative; overflow: hidden; transition: border-color 0.2s;
+      padding: 1.5rem; transition: border-color 0.2s;
     }
     .edu-card:hover { border-color: var(--accent); }
     .edu-card .year { font-size: 0.78rem; color: var(--text2); font-weight: 500; margin-bottom: 0.4rem; }
@@ -161,8 +108,7 @@ Index · HTML
       border-radius: 999px; padding: 2px 10px; font-size: 0.78rem; font-weight: 600;
     }
     .edu-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
- 
-    /* ── SKILLS ── */
+
     .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
     .skill-chip {
       display: inline-flex; align-items: center; gap: 8px;
@@ -172,8 +118,7 @@ Index · HTML
     }
     .skill-chip:hover { border-color: var(--accent); color: var(--accent2); }
     .skill-chip i { color: var(--accent2); }
- 
-    /* ── YEAR TABS ── */
+
     .tab-bar {
       display: flex; gap: 4px; margin-bottom: 2.5rem;
       background: var(--bg2); border: 1px solid var(--border);
@@ -188,7 +133,7 @@ Index · HTML
     .tab-btn[data-year="1"].active { color: var(--year1); }
     .tab-btn[data-year="2"].active { color: var(--year2); }
     .tab-btn[data-year="3"].active { color: var(--year3); }
- 
+
     .sem-label {
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--text2);
@@ -199,8 +144,7 @@ Index · HTML
     .sem-label.y1 { border-color: var(--year1); }
     .sem-label.y2 { border-color: var(--year2); }
     .sem-label.y3 { border-color: var(--year3); }
- 
-    /* ── COURSE CARDS ── */
+
     .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
     .course-card {
       background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
@@ -236,11 +180,10 @@ Index · HTML
       text-decoration: none; background: transparent; color: var(--text2);
       border: 1px dashed var(--border); width: fit-content; cursor: default;
     }
- 
+
     [data-year-section] { display: none; }
     [data-year-section].visible { display: block; }
- 
-    /* ── SECP HIGHLIGHT ── */
+
     .secp-banner {
       background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(37,99,235,0.15) 100%);
       border: 1px solid rgba(139,92,246,0.4);
@@ -251,14 +194,12 @@ Index · HTML
     .secp-banner .info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
     .secp-banner .info p { color: var(--text2); font-size: 0.85rem; }
     .secp-badge { background: rgba(139,92,246,0.2); color: #c4b5fd; padding: 4px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
- 
-    /* ── STATS ── */
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 3rem; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
     .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; text-align: center; }
     .stat-card .num { font-size: 2.2rem; font-weight: 800; color: var(--accent2); }
     .stat-card .lbl { font-size: 0.82rem; color: var(--text2); margin-top: 0.2rem; }
- 
-    /* ── FOOTER ── */
+
     footer {
       border-top: 1px solid var(--border);
       padding: 3rem 2rem; text-align: center; color: var(--text2); font-size: 0.85rem;
@@ -269,7 +210,7 @@ Index · HTML
     footer .f-social { display: flex; gap: 14px; justify-content: center; margin-bottom: 1.5rem; font-size: 1.2rem; }
     footer .f-social a { color: var(--text2); transition: color 0.2s; }
     footer .f-social a:hover { color: var(--accent2); }
- 
+
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .tab-bar { flex-wrap: wrap; }
@@ -278,8 +219,7 @@ Index · HTML
   </style>
 </head>
 <body>
- 
-<!-- NAV -->
+
 <nav>
   <a href="#" class="nav-logo">Afif<span>.</span></a>
   <div class="nav-links">
@@ -294,8 +234,7 @@ Index · HTML
     <a href="https://www.instagram.com/afifshaqir/" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </nav>
- 
-<!-- HERO -->
+
 <div id="hero">
   <div class="hero-badge"><i class="fas fa-graduation-cap"></i> Computer Science · Data Engineering · UTM</div>
   <h1>Hi, I'm Afif Shaqir Irfan</h1>
@@ -307,13 +246,11 @@ Index · HTML
   </div>
   <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
 </div>
- 
-<!-- ABOUT / EDUCATION -->
+
 <section id="about">
   <div class="section-label">About Me</div>
   <h2 class="section-title">Education Journey</h2>
   <p class="section-sub">From secondary school to pursuing my degree at UTM — here's my academic path.</p>
- 
   <div class="edu-grid">
     <div class="edu-card">
       <div class="edu-icon">🏫</div>
@@ -337,7 +274,6 @@ Index · HTML
       <span class="result">In Progress</span>
     </div>
   </div>
- 
   <div style="margin-top:3rem;">
     <div class="section-label">Highlights</div>
     <h2 class="section-title" style="font-size:1.5rem;">By the Numbers</h2>
@@ -349,8 +285,7 @@ Index · HTML
     </div>
   </div>
 </section>
- 
-<!-- SKILLS -->
+
 <section id="skills">
   <div class="section-label">Technical & Tools</div>
   <h2 class="section-title">Skills</h2>
@@ -368,7 +303,6 @@ Index · HTML
     <div class="skill-chip"><i class="fab fa-adobe"></i> Photoshop</div>
     <div class="skill-chip"><i class="fab fa-adobe"></i> Premiere Pro</div>
   </div>
- 
   <div style="margin-top:3rem;">
     <div class="section-label">Achievements</div>
     <h2 class="section-title" style="font-size:1.5rem;">Leadership & Certificates</h2>
@@ -386,20 +320,18 @@ Index · HTML
     </div>
   </div>
 </section>
- 
-<!-- COURSES -->
+
 <section id="courses">
   <div class="section-label">Academic Record</div>
   <h2 class="section-title">Subjects & Courses</h2>
   <p class="section-sub">All courses across my three years at UTM — click a year to filter.</p>
- 
+
   <div class="tab-bar">
     <button class="tab-btn active" data-year="1" onclick="showYear(1)">📘 Year 1</button>
     <button class="tab-btn" data-year="2" onclick="showYear(2)">📗 Year 2</button>
     <button class="tab-btn" data-year="3" onclick="showYear(3)">📙 Year 3</button>
   </div>
- 
-  <!-- YEAR 1 -->
+
   <div data-year-section="1" class="visible">
     <div class="sem-label y1">Semester 1 · 2023/2024</div>
     <div class="courses-grid">
@@ -444,7 +376,6 @@ Index · HTML
         </div>
       </div>
     </div>
- 
     <div class="sem-label y1">Semester 2 · 2023/2024</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -467,8 +398,7 @@ Index · HTML
       </div>
     </div>
   </div>
- 
-  <!-- YEAR 2 -->
+
   <div data-year-section="2">
     <div class="sem-label y2">Semester 1 · 2024/2025</div>
     <div class="courses-grid">
@@ -500,7 +430,6 @@ Index · HTML
         </div>
       </div>
     </div>
- 
     <div class="sem-label y2">Semester 2 · 2024/2025</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -532,8 +461,7 @@ Index · HTML
       </div>
     </div>
   </div>
- 
-  <!-- YEAR 3 -->
+
   <div data-year-section="3">
     <div class="secp-banner">
       <div class="info">
@@ -542,7 +470,6 @@ Index · HTML
       </div>
       <span class="secp-badge">Active Semester</span>
     </div>
- 
     <div class="sem-label y3">Semester 1 · 2025/2026</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -573,7 +500,6 @@ Index · HTML
         </div>
       </div>
     </div>
- 
     <div class="sem-label y3">Semester 2 · 2025/2026</div>
     <div class="courses-grid">
       <div class="course-card">
@@ -594,8 +520,8 @@ Index · HTML
           <a class="btn-coming"><i class="fas fa-clock"></i> Coming Soon</a>
         </div>
       </div>
-      <div class="course-card" style="border-color: rgba(139,92,246,0.5); background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, var(--bg2) 100%);">
-        <div class="course-no-img" style="background: linear-gradient(135deg, rgba(139,92,246,0.2) 0%, var(--bg2) 100%);">🌟</div>
+      <div class="course-card" style="border-color:rgba(139,92,246,0.5);background:linear-gradient(135deg,rgba(139,92,246,0.08) 0%,var(--bg2) 100%);">
+        <div class="course-no-img" style="background:linear-gradient(135deg,rgba(139,92,246,0.2) 0%,var(--bg2) 100%);">🌟</div>
         <div class="course-body">
           <div class="course-sem y3">Year 3 · Sem 2 · Exchange</div>
           <h3>Special Topic in Data Engineering (SECP3843)</h3>
@@ -606,8 +532,7 @@ Index · HTML
     </div>
   </div>
 </section>
- 
-<!-- CONTACT -->
+
 <section id="contact" style="max-width:600px;">
   <div class="section-label">Get in Touch</div>
   <h2 class="section-title">Contact Me</h2>
@@ -618,8 +543,7 @@ Index · HTML
     <div class="edu-card"><div class="edu-icon">📞</div><h3>Phone</h3><p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem;">(60) 11-36718507</p></div>
   </div>
 </section>
- 
-<!-- FOOTER -->
+
 <footer>
   <div class="f-social">
     <a href="https://github.com/afifshaqir" target="_blank"><i class="fab fa-github"></i></a>
@@ -636,7 +560,7 @@ Index · HTML
   </div>
   <p>© 2026 Afif Shaqir Irfan bin Arqam · Universiti Teknologi Malaysia</p>
 </footer>
- 
+
 <script>
   function showYear(y) {
     document.querySelectorAll('[data-year-section]').forEach(el => el.classList.remove('visible'));
@@ -644,8 +568,6 @@ Index · HTML
     document.querySelector('[data-year-section="' + y + '"]').classList.add('visible');
     document.querySelector('[data-year="' + y + '"]').classList.add('active');
   }
- 
-  // Smooth active nav link on scroll
   const sections = document.querySelectorAll('section[id], div[id="hero"]');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -657,5 +579,3 @@ Index · HTML
 </script>
 </body>
 </html>
- 
-
